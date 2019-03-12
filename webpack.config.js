@@ -1,9 +1,12 @@
 const path = require("path");
 const webpack = require("webpack");
 
+const NODE_ENV = process.env.NODE_ENV || 'development';// or production
+
 module.exports = {
     entry: "./src/index.js",
     mode: "development",
+    devtool: NODE_ENV === 'development' ? 'cheap-inline-module-source-map' : null,
     module: {
         rules: [
             {
@@ -31,9 +34,9 @@ module.exports = {
         hotOnly: true
     },
     plugins:[
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': JSON.stringify('production')
-        }),
-        new webpack.HotModuleReplacementPlugin()
+            NODE_ENV: JSON.stringify(NODE_ENV)
+        })
     ]
 };
