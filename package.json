@@ -26,12 +26,15 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^1.0.0",
     "jest": "^24.4.0",
+    "node-sass": "^4.11.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "^2.1.8",
     "redux-devtools": "^3.5.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.0",
-    "webpack": "^4.28.3",
+    "sass": "*",
+    "webpack": "^4.29.6",
     "webpack-cli": "^3.1.1",
     "webpack-dev-server": "^3.1.8"
   }

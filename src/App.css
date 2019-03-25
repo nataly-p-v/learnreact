@@ -1,8 +1,233 @@
-.main-nav {
-
+body, html {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    background: #f3f3f3;
+    color: #333;
+    font-size: 16px;
+    direction: ltr;
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .main-nav__link {
     text-decoration: none;
     padding: 10px;
+    color:#fff;
+}
+
+.main-wrapper {
+    background: url('https://assets.nflxext.com/ffe/siteui/vlv3/783e3b0f-b68e-440e-a980-0e1c19cbe76c/772aef46-c367-4f6c-a63f-e638b77017f0/UA-en-20190318-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    background-position:center center;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.header-logo, .footer-logo {
+    color:	#f55263;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    padding:5px 0 0 15px;
+    display: block;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+.main-wrapper:before {
+    content:'';
+    display:block;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+}
+.search-title {
+    color:#fff;
+    text-transform: uppercase;
+    margin:10px 0;
+    display:block;
+}
+.search-title--small {
+   font-size:12px;
+   display:inline-block;
+
+}
+.search-btn {
+    background: #f55263;
+    color:#fff;
+    outline:none;
+    border:none;
+    padding:10px 20px;
+    width:10vw;
+    margin-top:1vh;
+    display:block;
+    border-radius:5px;
+    align-self: flex-end;
+    text-transform: uppercase;
+    cursor:pointer;
+    text-decoration: none;
+    text-align: center;
+}
+.search-form {
+    display: flex;
+    flex-direction: column;
+}
+.search-input {
+    background: #010101;
+    outline:none;
+    border:none;
+    padding:20px 45px;
+    width: 30vw;
+    color:#BFC0C2;
+}
+.search-field {
+    position: relative;
+}
+.search-symbol {
+    position: absolute;
+    z-index:1;
+    right:15px;
+    transform: translateY(-50%) scale(1, -1);
+    top:50%;
+}
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index:1;
+}
+.header{
+    position:relative;
+    z-index: 1;
+}
+.footer {
+    position:relative;
+    z-index: 1;
+    padding: 10px 0;
+    background:#414141;
+}
+.cta-wrapper {
+    position: relative;
+    z-index: 1;
+    padding-top: 60px;
+    margin: 0 auto;
+    display: block;
+
+}
+.searchBy {
+    display: inline-block;
+    position: relative;
+    top: -30px;
+
+}
+
+.searchBy__btn {
+    color:#fff;
+    outline:none;
+    border:none;
+    padding:5px 20px;
+    text-transform: uppercase;
+    font-size:12px;
+    text-decoration: none;
+    border-radius:3px;
+    margin-left:10px;
+}
+.searchBy__btn--pink {
+    background: #f55263;
+}
+.searchBy__btn--grey {
+    background: #3C3C3C;
+}
+.search-result {
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    min-height:66.1vh;
+}
+
+.search-result__header {
+    background:#F5F5F5;
+    display:flex;
+    padding:10px 0;
+}
+.search-result__header--title {
+    width:50%;
+    text-align: center;
+
+}
+.search-result__grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.search-result__grid-item {
+    padding:0 15px;
+
+}
+.img-wrapper {
+    max-width:220px;
+    max-height: 315px;
+    overflow: hidden;
+}
+.backToResult-btn {
+    color:#f55263;
+    background: #fff;
+    outline:none;
+    border:none;
+    padding:5px 20px;
+    text-transform: uppercase;
+    font-size:12px;
+    text-decoration: none;
+    border-radius:3px;
+    max-width: 2.8vw;
+}
+.result-description {
+
+}
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media only screen and (max-device-width: 992px) {
+    .search-title--small {
+        font-size:11px;
+    }
+    .search-btn {
+        padding: 10px;
+        width:auto;
+    }
+    .searchBy__btn {
+        padding:5px 10px;
+    }
+}
+@media only screen and (max-device-width: 662px) {
+    .searchBy {
+        position: relative;
+        top:0;
+        text-align: center;
+        display: block;
+    }
+    .search-btn {
+        align-self: auto;
+    }
 }
