@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import SearchBy from '../searchBy/searchBy';
+import SearchResult from '../searchResult/searchResult';
+import {Link} from "react-router-dom";
 
 class Search extends Component {
     constructor(props) {
@@ -16,14 +18,14 @@ class Search extends Component {
 
     handleSubmit(event) {
         alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
+        // event.preventDefault();
     }
 
     render() {
         return (
             <div className={"content"}>
                 <div className={"cta-wrapper"}>
-                    <form onSubmit={this.handleSubmit} className={"search-form"}>
+                    <form className={"search-form"}>
                         <label>
                             <span className={"search-title"}>
                                 Find you movie
@@ -32,10 +34,11 @@ class Search extends Component {
                                 <input type="text" value={this.state.value} onChange={this.handleChange} className={"search-input"}/><span className="search-symbol">&#11148;</span>
                             </div>
                         </label>
-                        <input type="submit" value="search" className={"search-btn"}/>
+                        <Link to="/result" className={"search-btn"} onClick={this.handleSubmit}> <span>search</span></Link>
                     </form>
                     <SearchBy/>
                 </div>
+                <SearchResult/>
             </div>
         )
     }

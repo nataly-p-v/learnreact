@@ -6,6 +6,10 @@ body, html {
     direction: ltr;
     margin: 0;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 .main-nav__link {
     text-decoration: none;
@@ -66,6 +70,8 @@ body, html {
     align-self: flex-end;
     text-transform: uppercase;
     cursor:pointer;
+    text-decoration: none;
+    text-align: center;
 }
 .search-form {
     display: flex;
@@ -98,6 +104,9 @@ body, html {
 .content {
     flex: 1;
     display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index:1;
 }
 .header{
     position:relative;
@@ -113,7 +122,6 @@ body, html {
     position: relative;
     z-index: 1;
     padding-top: 60px;
-    top: 18%;
     margin: 0 auto;
     display: block;
 
@@ -141,4 +149,85 @@ body, html {
 }
 .searchBy__btn--grey {
     background: #3C3C3C;
+}
+.search-result {
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    min-height:66.1vh;
+}
+
+.search-result__header {
+    background:#F5F5F5;
+    display:flex;
+    padding:10px 0;
+}
+.search-result__header--title {
+    width:50%;
+    text-align: center;
+
+}
+.search-result__grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.search-result__grid-item {
+    padding:0 15px;
+
+}
+.img-wrapper {
+    max-width:220px;
+    max-height: 315px;
+    overflow: hidden;
+}
+.backToResult-btn {
+    color:#f55263;
+    background: #fff;
+    outline:none;
+    border:none;
+    padding:5px 20px;
+    text-transform: uppercase;
+    font-size:12px;
+    text-decoration: none;
+    border-radius:3px;
+    max-width: 2.8vw;
+}
+.result-description {
+
+}
+.clearfix:after {
+    content: " "; /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media only screen and (max-device-width: 992px) {
+    .search-title--small {
+        font-size:11px;
+    }
+    .search-btn {
+        padding: 10px;
+        width:auto;
+    }
+    .searchBy__btn {
+        padding:5px 10px;
+    }
+}
+@media only screen and (max-device-width: 662px) {
+    .searchBy {
+        position: relative;
+        top:0;
+        text-align: center;
+        display: block;
+    }
+    .search-btn {
+        align-self: auto;
+    }
 }
