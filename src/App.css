@@ -42,7 +42,7 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     z-index: 1;
 }
@@ -160,20 +160,42 @@ img {
 .search-result__header {
     background:#F5F5F5;
     display:flex;
-    padding:10px 0;
+    padding:20px 0;
+    margin-bottom:30px;
 }
-.search-result__header--title {
+.search-result__header-title {
     width:50%;
     text-align: center;
-
+    font-weight:bold;
+}
+.search-result__header-title-active {
+    color:#f55263;
 }
 .search-result__grid {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 10px 10px;
 }
 .search-result__grid-item {
     padding:0 15px;
-
+}
+.item-wrapper {
+    position: relative;
+    padding: 10px;
+}
+.year {
+    display:inline-block;
+    border:1px solid gray;
+    padding: 1px 10px;
+    position: absolute;
+    right:0;
+    top: 10px;
+    font-size: 11px;
+    color:gray;
+}
+.text {
+    float: left;
+    width: 80%;
 }
 .img-wrapper {
     max-width:220px;
@@ -190,10 +212,53 @@ img {
     font-size:12px;
     text-decoration: none;
     border-radius:3px;
-    max-width: 2.8vw;
+    width: 50px;
+    position: absolute;
+    right: 15px;
+    top: -15px;
 }
 .result-description {
-
+    display:flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.result-description__img {
+    margin-right:3vw;
+}
+.result-description__title {
+    color:#f55263;
+    font-weight:bold;
+    font-size: 30px;
+}
+.result-description__text {
+    max-width: 30vw;
+    color:#fff;
+    padding-top:30px;
+}
+.result-description__estimate {
+    color:lightgreen;
+    border-radius: 50%;
+    border-color:lightgreen;
+    border-width: 1px;
+    border-style: solid;
+    display: inline-block;
+    padding: 10px;
+    position: relative;
+    top: -10px;
+    font-size:15px;
+}
+.result-description__year {
+    font-weight:bold;
+    display:inline-block;
+    margin-bottom:20px;
+    margin-top:10px;
+}
+.result-description__duration {
+    font-weight:bold;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom:20px;
+    margin-top:10px;
 }
 .clearfix:after {
     content: " "; /* Older browser do not support empty content */
@@ -219,6 +284,9 @@ img {
     .searchBy__btn {
         padding:5px 10px;
     }
+    .result-description__text {
+        max-width: 50vw;
+    }
 }
 @media only screen and (max-device-width: 662px) {
     .searchBy {
@@ -229,5 +297,13 @@ img {
     }
     .search-btn {
         align-self: auto;
+    }
+    .result-description__text {
+        max-width: initial;
+        padding: 10px ;
+    }
+    .result-description {
+        align-items: center;
+        flex-direction: column;
     }
 }
