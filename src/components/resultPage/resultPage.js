@@ -3,6 +3,7 @@ import Footer from '../footer/footer';
 import Header from '../header/header';
 import { Link } from 'react-router-dom';
 import SearchResult from '../searchResult/searchResult';
+import ErrorBoundary from "../errorBoundary/errorBoundary";
 
 class resultPage extends Component {
     render () {
@@ -11,6 +12,7 @@ class resultPage extends Component {
                 <Header/>
                 <div className={"content"}>
                     <Link to="/" class={"backToResult-btn"}>Search</Link>
+                    <ErrorBoundary>error</ErrorBoundary>
                     <div className={"result-description"}>
                         <div className={"result-description__img"}>
                             <img src="https://images-na.ssl-images-amazon.com/images/I/41CAtQyKWLL._SY445_.jpg" alt=""/>
