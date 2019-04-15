@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import SearchHeader from '../searchHeader/searchHeader';
+import Movies from '../movies/movies';
 
 class resultPage extends Component {
     render() {
         return (
             <div className={"search-result"}>
                <SearchHeader sortBy={"sortBy"}/>
+                <Movies/>
                 <div className="search-result__grid clearfix">
                     <div className={"search-result__grid-item"}>
                         <div className="img-wrapper"><img

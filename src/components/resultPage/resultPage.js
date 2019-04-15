@@ -10,7 +10,7 @@ class resultPage extends Component {
             <div className={"main-wrapper"}>
                 <Header/>
                 <div className={"content"}>
-                    <Link to="/" class={"backToResult-btn"}>Search</Link>
+                    <Link to="/" className={"backToResult-btn"}>Search</Link>
                     <div className={"result-description"}>
                         <div className={"result-description__img"}>
                             <img src="https://images-na.ssl-images-amazon.com/images/I/41CAtQyKWLL._SY445_.jpg" alt=""/>

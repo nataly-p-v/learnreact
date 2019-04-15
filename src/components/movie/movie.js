@@ -18,7 +18,7 @@ class Movie extends Component {
     render() {
 
         return (
-            <li key={this.props.key} className={"movie"}>
+            <li  className={"movie"}>
                 <span className={"movie-title"}>Movie title: {this.props.title}</span>
                 <br/>
                 <span className={"movie-creation"}>release date:{this.props.release_date}</span>
@@ -35,4 +35,4 @@ class Movie extends Component {
     }
 }
 
-export default Course;
+export default Movie;

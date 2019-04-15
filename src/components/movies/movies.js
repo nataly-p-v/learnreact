@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { moviesFetchData } from '../../store/actions/movies'
-import { selectCources } from '../../store/selectors/selectMovies'
+import { selectMovies } from '../../store/selectors/selectMovies'
 import Movie1 from '../../components/movie/movie'
 
 class Movies extends Component {
@@ -12,7 +12,8 @@ class Movies extends Component {
     };
 
     componentDidMount() {
-        this.props.fetchData('https://reactjs-cdp.herokuapp.com/movies?sortBy=desc&searchBy=title')
+        // this.props.fetchData('http://www.mocky.io/v2/5c753ea63100000e00c233a9')
+        this.props.fetchData('https://reactjs-cdp.herokuapp.com/movies?sortBy=desc&searchBy=title');
     };
 
     addMovie = ({ target: { value } }) => {
@@ -38,7 +39,7 @@ class Movies extends Component {
                 <div className="button-wrapper">
                     <button className={"btn btn-primary"} onClick={this.addMovies}>Add movie</button>
                 </div>
-                <ul className="courses-list">
+                <ul className="movies-list">
                     {movies && movies.map((item, i) => <Movie1 {...item} key={i} />)}
                 </ul>
             </div>
@@ -55,11 +56,14 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
-        fetchData: (url) => dispatch(moviesFetchData(url))
-    };
-};
+        fetchData: (url) => {
+            dispatch(moviesFetchData(url))
+        }
+    }
+}
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movies);
 
