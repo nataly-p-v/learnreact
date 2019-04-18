@@ -24,6 +24,7 @@ class App extends Component {
     render(){
         return(
             <div className="App">
+
                 <Link to="/movies" className={"nav-link"}>Movies</Link>
                 <Link to="/result" className={"nav-link"}>Result</Link>
                 <Router/>

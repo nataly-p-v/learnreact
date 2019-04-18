@@ -7,18 +7,28 @@ import Movie1 from '../../components/movie/movie'
 class Movies extends Component {
     constructor (props) {
         super(props);
-
-        this.addMovie = this.addMovie.bind(this);
+        this.state = {
+            items: [],
+        };
     };
 
+    fetchData(url) {
+        this.setState({ isLoading: true });
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                this.setState({ isLoading: false });
+                return response;
+            })
+            .then((response) => response.json())
+            .then((items) => this.setState({ items }))
+            .catch(() => this.setState({ hasErrored: true }));
+    }
     componentDidMount() {
-        // this.props.fetchData('http://www.mocky.io/v2/5c753ea63100000e00c233a9')
-        this.props.fetchData('https://reactjs-cdp.herokuapp.com/movies?sortBy=desc&searchBy=title');
-    };
-
-    addMovie = ({ target: { value } }) => {
-        console.log(value)
-    };
+        this.fetchData('https://reactjs-cdp.herokuapp.com/movies');
+    }
 
     render() {
         const {
@@ -36,11 +46,9 @@ class Movies extends Component {
         return (
             <div>
                 <h1>movies</h1>
-                <div className="button-wrapper">
-                    <button className={"btn btn-primary"} onClick={this.addMovies}>Add movie</button>
-                </div>
                 <ul className="movies-list">
-                    {movies && movies.map((item, i) => <Movie1 {...item} key={i} />)}
+                    {console.log(this.state.items)}
+                    {Object.keys(this.state.items) && Object.keys(this.state.items).map((item, i) => <Movie1 {...item} key={i} />)}
                 </ul>
             </div>
         );
@@ -56,13 +64,11 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = () => {
     return {
-        fetchData: (url) => {
-            dispatch(moviesFetchData(url))
-        }
+        fetchData: moviesFetchData,
     }
-}
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movies);

@@ -23,17 +23,17 @@ export function moviesFetchData(url) {
 
         fetch(url)
             .then((response) => {
+                console.log(response)
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
-                console.log(url)
                 dispatch(moviesIsLoading(false));
 
                 return response;
             })
             .then((response) => {
-
-                response.json()})
+                response.json()
+            })
             .then((movies) => {
                 dispatch(moviesFetchDataSuccess(movies))
             })
