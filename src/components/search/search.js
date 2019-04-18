@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SearchBy from '../searchBy/searchBy';
-import SearchResult from '../searchResult/searchResult';
-import {Link} from "react-router-dom";
+// import SearchResult from '../searchResult/searchResult';
+import Movies from '../movies/movies';
 
 class Search extends Component {
     constructor(props) {
@@ -34,11 +34,12 @@ class Search extends Component {
                                 <input type="text" value={this.state.value} onChange={this.handleChange} className={"search-input"}/><span className="search-symbol">&#11148;</span>
                             </div>
                         </label>
-                        <Link to="/result" className={"search-btn"} onClick={this.handleSubmit}> <span>search</span></Link>
+                        <button className={"search-btn"} onClick={this.handleSubmit}> <span>search</span></button>
                     </form>
                     <SearchBy/>
                 </div>
-                <SearchResult/>
+                <Movies/>
+                {/*<SearchResult/>*/}
             </div>
         )
     }
