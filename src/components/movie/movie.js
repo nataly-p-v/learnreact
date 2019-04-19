@@ -1,34 +1,23 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class Movie extends Component {
-    constructor() {
-        super();
-        this.editMovie = this.editMovie.bind(this);
-        this.deleteMovie = this.deleteMovie.bind(this);
-    };
-
-    editMovie = ({ target: { value } }) => {
-        console.log(value)
-    };
-
-    deleteMovie = ({ target: { value } }) => {
-        console.log(value)
-    };
-
     render() {
-
         return (
-            <li  className={"movie"}>
-                <span className={"movie-title"}>Movie title: {this.props.title}</span>
-                <br/>
-                <span className={"movie-creation"}>release date:{this.props.release_date}</span>
-                <br/>
-                <span className={"movie-budget"}>budget: {this.props.budget}</span>
-                <span className="button-wrapper">
-                    <button className={"btn btn-primary"} onClick={this.editMovie}>Edit</button>
-                    <button className={"btn btn-primary"} onClick={this.deleteMovie}>Delete</button>
-                </span>
-            </li>
+            <div className={"search-result__grid-item"} key={this.props.id}>
+                <Link to={`/movies/${this.props.id}`}>
+                    <div className="img-wrapper">
+                        <img src={this.props.poster_path} alt=""/>
+                    </div>
+                    <div className={"item-wrapper"}>
+                        <div className="text">
+                            <div className={"item-title"}>{this.props.title}</div>
+                            <span>{this.props.genres}</span>
+                        </div>
+                        <div className={"year"}>{this.props.release_date.split('-')[0]}</div>
+                    </div>
+                </Link>
+            </div>
         );
 
 
