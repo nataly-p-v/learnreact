@@ -31,9 +31,9 @@ class Movies extends Component {
     }
 
     render() {
-        const {
-            movies,
-        } = this.props;
+        // const {
+        //     movies,
+        // } = this.props;
 
         if (this.props.hasErrored) {
             return <p>Sorry! There was an error loading the items</p>;
@@ -45,11 +45,16 @@ class Movies extends Component {
 
         return (
             <div>
-                <h1>movies</h1>
-                <ul className="movies-list">
-                    {console.log(this.state.items)}
-                    {Object.keys(this.state.items) && Object.keys(this.state.items).map((item, i) => <Movie1 {...item} key={i} />)}
-                </ul>
+                <header className={"search-result__header"}>
+                    <div className="search-result__header-title">{this.state.items.data && this.state.items.data.length} movies found</div>
+                    <div className="search-result__header-title">Sort by <span
+                        className="search-result__header-title-active">release date </span>|
+                        <span className="search-result__header-title-active">rating</span>
+                    </div>
+                </header>
+                <div className="search-result__grid clearfix">
+                    {this.state.items.data && this.state.items.data.map((item, i) => <Movie1 {...item} key={i} />)}
+                </div>
             </div>
         );
     }

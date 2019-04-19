@@ -35,6 +35,11 @@ img {
     display: block;
     font-family: Geneva, Arial, Helvetica, sans-serif;
 }
+.header-logo:hover, .footer-logo:hover {
+    color:	#f55263;
+    text-decoration: none;
+    cursor:pointer;
+}
 .main-wrapper:before {
     content:'';
     display:block;
@@ -72,6 +77,9 @@ img {
     cursor:pointer;
     text-decoration: none;
     text-align: center;
+}
+.search-btn:hover {
+    background: #f55270;
 }
 .search-form {
     display: flex;
@@ -147,8 +155,19 @@ img {
 .searchBy__btn--pink {
     background: #f55263;
 }
+.searchBy__btn--pink:hover {
+    background: #f55280;
+}
 .searchBy__btn--grey {
     background: #3C3C3C;
+}
+.searchBy__btn--grey:hover {
+    background: #3F3F3F;
+}
+.searchBy__btn:hover {
+    text-decoration: none;
+    color:#fff;
+    cursor:pointer;
 }
 .search-result {
     background: #fff;
@@ -178,6 +197,8 @@ img {
 }
 .search-result__grid-item {
     padding:0 15px;
+    max-width: 20%;
+    margin-bottom: 10px;
 }
 .item-wrapper {
     position: relative;
@@ -198,9 +219,8 @@ img {
     width: 80%;
 }
 .img-wrapper {
-    max-width:220px;
-    max-height: 315px;
     overflow: hidden;
+    max-height:430px;
 }
 .backToResult-btn {
     color:#f55263;
@@ -212,10 +232,14 @@ img {
     font-size:12px;
     text-decoration: none;
     border-radius:3px;
-    width: 50px;
     position: absolute;
     right: 15px;
     top: -15px;
+}
+.backToResult-btn:hover {
+    text-decoration: none;
+    cursor:pointer;
+    color:#f55263;
 }
 .result-description {
     display:flex;
@@ -242,10 +266,10 @@ img {
     border-width: 1px;
     border-style: solid;
     display: inline-block;
-    padding: 10px;
     position: relative;
     top: -10px;
     font-size:15px;
+    padding: 5px 13px;
 }
 .result-description__year {
     font-weight:bold;
@@ -273,6 +297,11 @@ img {
     clear: both;
 }
 
+@media only screen and (max-device-width: 1345px) {
+    .year {
+        position:static;
+    }
+}
 @media only screen and (max-device-width: 992px) {
     .search-title--small {
         font-size:11px;
@@ -305,5 +334,8 @@ img {
     .result-description {
         align-items: center;
         flex-direction: column;
+    }
+    .search-result__grid-item {
+        max-width:50%;
     }
 }

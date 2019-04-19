@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import SearchBy from '../searchBy/searchBy';
-// import SearchResult from '../searchResult/searchResult';
 import Movies from '../movies/movies';
 
 class Search extends Component {
@@ -38,8 +37,11 @@ class Search extends Component {
                     </form>
                     <SearchBy/>
                 </div>
-                <Movies/>
-                {/*<SearchResult/>*/}
+                <div className={"search-result"}>
+
+                    <Movies/>
+
+                </div>
             </div>
         )
     }
